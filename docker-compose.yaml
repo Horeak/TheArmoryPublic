@@ -34,6 +34,8 @@ services:
       - SERVER_PORT=2333
       - LAVALINK_SERVER_PASSWORD=${LAVALINK_PASSWORD}
     restart: unless-stopped
+    ports:
+      - "2333:2333"
     logging:
       driver: gelf
       options:

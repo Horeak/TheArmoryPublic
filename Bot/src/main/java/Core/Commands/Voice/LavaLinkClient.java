@@ -54,12 +54,9 @@ public class LavaLinkClient
 		lavalink = new JdaLavalink(userid, 1, shardId -> Startup.getClient());
 		lavalink.setUserId(userid);
 		
-		if (Startup.jarFile) {
-			lavalink.addNode(URI.create("ws://lavalink"), password);
-		}else{
-			lavalink.addNode(URI.create("ws://" + Startup.getEnvValue("lavalink:ip")), password);
-			
-		}
+		var url = Startup.jarFile ? URI.create("ws://lavalink") : URI.create("ws://" + Startup.getEnvValue("lavalink:ip"));
+		lavalink.addNode(url, password);
+		System.out.println(lavalink.getNodes().get(0));
 		init = true;
 	}
 

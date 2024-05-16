@@ -184,9 +184,9 @@ public class CommandDocumentation
 							usage.append(" ");
 							var name = option.getName();
 							if (option.isRequired()) {
-								usage.append("\\<").append(name).append(">");
+								usage.append("< ").append(name).append(" >");
 							} else {
-								usage.append("[").append(name).append("]");
+								usage.append("[ ").append(name).append(" ]");
 							}
 						}
 						
